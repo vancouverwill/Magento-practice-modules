@@ -1,18 +1,18 @@
 <config>    
     <modules>
-        <Synergy_Helloworld>
+        <Synergy_Weblog>
             <version>0.1.0</version>
-        </Synergy_Helloworld>
+        </Synergy_Weblog>
     </modules>
     <frontend>
         <routers>
-            <helloworld>
+            <weblog>
                 <use>standard</use>
                 <args>
-                    <module>Synergy_Helloworld</module>
-                    <frontName>helloworld</frontName>
+                    <module>Synergy_Weblog</module>
+                    <frontName>weblog</frontName>
                 </args>
-            </helloworld>
+            </weblog>
         </routers>  
     </frontend>
 </config>

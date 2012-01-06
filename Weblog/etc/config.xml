@@ -1,0 +1,28 @@
+<config>    
+    <modules>
+        <Synergy_Weblog>
+            <version>0.1.0</version>
+        </Synergy_Weblog>
+    </modules>
+    <frontend>
+    <routers>
+        <weblog>
+            <use>standard</use>
+            <args>
+                <module>Synergy_Weblog</module>
+                <frontName>weblog</frontName>
+            </args>
+        </weblog>
+    </routers>
+	</frontend>
+	<models>
+        <weblog>
+            <class>Magentotutorial_Weblog_Model</class>
+            <!-- 
+            need to create our own resource, cant just
+            use core_mysql4
+            -->
+            <resourceModel>weblog_mysql4</resourceModel>
+        </weblog>   
+    </models>
+</config>
