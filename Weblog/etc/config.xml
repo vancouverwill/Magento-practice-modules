@@ -5,24 +5,44 @@
         </Synergy_Weblog>
     </modules>
     <frontend>
-    <routers>
-        <weblog>
-            <use>standard</use>
-            <args>
-                <module>Synergy_Weblog</module>
-                <frontName>weblog</frontName>
-            </args>
-        </weblog>
-    </routers>
+    	<routers>
+       	 	<weblog>
+            	<use>standard</use>
+            		<args>
+                		<module>Synergy_Weblog</module>
+                			<frontName>weblog</frontName>
+            		</args>
+        		</weblog>
+    	</routers>
 	</frontend>
+	<global>
 	<models>
         <weblog>
-            <class>Magentotutorial_Weblog_Model</class>
-            <!-- 
-            need to create our own resource, cant just
-            use core_mysql4
-            -->
+            <class>Synergy_Weblog_Model</class>
+           
             <resourceModel>weblog_mysql4</resourceModel>
-        </weblog>   
+        </weblog>
+        <weblog_mysql4>
+            <class>Synergy_Weblog_Model_Mysql4</class>    
+            <entities>
+                <blogpost>
+                    <table>blog_posts</table>
+                </blogpost>
+            </entities>            
+        </weblog_mysql4>   
     </models>
+    <resources>
+        <weblog_write>
+            <connection>
+                <use>core_write</use>
+            </connection>
+        </weblog_write>
+        <weblog_read>
+            <connection>
+                <use>core_read</use>
+            </connection>
+        </weblog_read>      
+    </resources>  
+    </global>
 </config>
+
